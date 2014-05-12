@@ -1,0 +1,22 @@
+<%=  form_for(@vendor) do |f| %>
+
+  <div class="field">Name:<br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">Stall:<br>
+    <%= f.text_field :stall %>
+  </div>
+  <div class="field">Owner:<br>
+    <%= f.text_field :owner %>
+  </div>
+  <div class="field">Type:<br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">Comments:<br>
+    <%= f.text_field :comments %>
+  </div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

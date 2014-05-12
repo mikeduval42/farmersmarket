@@ -1,0 +1,15 @@
+<h1>Farmers Market Vendors Index</h1>
+
+<% @vendors.each do |v| %>
+<div class="attributes"><strong>Name:</strong> <%= v.name %></div>
+<div class="attributes"><strong>Stall:</strong> <%= v.stall %></div>
+<div class="attributes"><strong>Owner:</strong> <%= v.owner %></div>
+<div class="attributes"><strong>Type:</strong> <%= v.type %></div>
+<div class="attributes"><strong>Comments:</strong> <%= v.comments %></div>
+<%= link_to "Edit", edit_vendor_path(v) %>
+<%= link_to "Delete", v, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<br>
+<% end %>
+
+<%= link_to "Add a New Vendor", new_vendor_path %>
