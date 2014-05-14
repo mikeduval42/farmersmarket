@@ -1,3 +1,33 @@
 // Place all the styles related to the vendors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+body {
+  max-width: 960px;
+  margin: 52px auto;
+  background: url("market.jpg");
+  background-size: cover;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+}
+h1 {
+  padding-top: 4px;
+  font-family: 'Cabin Sketch', cursive;
+}
+.actions {
+  text-align: center;
+}
+.navbar {
+  opacity: .6;
+}
+.container {
+  background-color: #212120;
+  opacity: .80;
+  max-width: 750px;
+  margin-top: -1px;
+}
+
+

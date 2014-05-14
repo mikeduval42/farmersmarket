@@ -1,21 +1,24 @@
 <%=  form_for(@vendor) do |f| %>
 
-  <div class="field">Name:<br>
-    <%= f.text_field :name %>
+<div class="container">
+  <div class="field"><strong>Name</strong><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div><br>
+  <div class="field"><strong>Stall</strong><br>
+    <%= f.text_field :stall, class: "form-control" %>
+  </div><br>
+  <div class="field"><strong>Owner</strong><br>
+    <%= f.text_field :owner, class: "form-control" %>
+  </div><br>
+  <div class="field"><strong>Type</strong><br>
+    <%= f.text_field :type, class: "form-control" %>
+  </div><br>
+  <div class="field"><strong>Comments</strong><br>
+    <!-- text_area allows for moving text entry adn thr 50x10 sets a min size for box -->
+    <%= f.text_area :comments, class: "form-control" %>
   </div>
-  <div class="field">Stall:<br>
-    <%= f.text_field :stall %>
-  </div>
-  <div class="field">Owner:<br>
-    <%= f.text_field :owner %>
-  </div>
-  <div class="field">Type:<br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">Comments:<br>
-    <%= f.text_field :comments %>
-  </div>
-
+</div>
+<br>
 <div class="actions">
   <%= f.submit %>
 </div>
