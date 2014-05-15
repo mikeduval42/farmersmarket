@@ -29,10 +29,13 @@
         <li><%= link_to "Add a Vendor", new_vendor_path %></li>
         <li><%= link_to 'Back', vendors_path %></li>
       </ul>
-
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Sign In</a></li>
+        <% if !current_user %>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li><%= link_to "Sign In", new_sessions_path %></li>
+          <% else %>
+        <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,0 +1,13 @@
+<div class="container">
+<h1 class="text-center">Sign Up New User</h1>
+<br>
+<%= form_for @user do |f| %>
+  Name <span><%= f.text_field :name %></span>
+  Email <span><%= f.text_field :email %></span>
+  Password <span><%= f.password_field :password %></span>
+<br>
+<br>
+<span><%= f.submit %></span>
+<% end %>
+</div>
+

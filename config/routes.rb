@@ -1,5 +1,12 @@
 Farmersmarketapp::Application.routes.draw do
+  # get "sessionscontroller/new"
+  # get "sessionscontroller/create"
+  # get "sessionscontroller/destroy"
+  # get "userscontroller/new"
+  # get "userscontroller/create"
   resources :vendors
+  resource :sessions
+  resources :users
 
   # get "vendors/index"
   # get "vendors/show"
