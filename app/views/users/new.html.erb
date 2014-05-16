@@ -1,5 +1,14 @@
+<% if @user.errors.any? %>
+
+    <ul class="list-group">
+      <% @user.errors.messages.each do |message| %>
+        <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 <div class="container">
-<h1 class="text-center">Sign Up New User</h1>
+<h1 class="text-center">Sign Up</h1>
 <br>
 <div class="text-center">
   <%= form_for @user do |f| %>

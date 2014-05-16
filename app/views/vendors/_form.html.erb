@@ -1,5 +1,16 @@
-<%=  form_for(@vendor) do |f| %>
+<div class= "possibleerrors">
 
+  <%#Show errors%>
+<% if @vendor.errors.any? %>
+    <h2><%= pluralize(@vendor.errors.count, "error") %> prohibited this vendor from being added:</h2>
+    <ul class="list-group">
+      <% @vendor.errors.messages.each do |message| %>
+        <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<%=  form_for(@vendor) do |f| %>
 <div class="container">
   <div class="field"><strong>Name</strong><br>
     <%= f.text_field :name, class: "form-control" %>

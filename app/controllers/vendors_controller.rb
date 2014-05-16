@@ -17,6 +17,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
     if @vendor.save
+      flash[:success] = "Your entry has been created!"
       redirect_to vendors_path
     else
       render 'new'
@@ -32,6 +33,7 @@ class VendorsController < ApplicationController
   def update
     @vendor = Vendor.find(params[:id])
       if @vendor.update_attributes(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
+        flash[:success] = "Your entry has been updated!"
         redirect_to vendors_path
       else
         render 'edit'

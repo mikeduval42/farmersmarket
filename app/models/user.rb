@@ -5,7 +5,7 @@ class User
   field :email, type: String
   field :password_digest, type: String
   field :is_admin, type: Mongoid::Boolean, default: false
-  has_many :vendors
+  validates_presence_of :name, :email, :password_digest, message: "One or more of the fields was not completed, please update."
 
   def password
     @password
