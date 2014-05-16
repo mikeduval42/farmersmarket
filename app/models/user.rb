@@ -4,6 +4,8 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
+  field :is_admin, type: Mongoid::Boolean, default: false
+  has_many :vendors
 
   def password
     @password

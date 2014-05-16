@@ -3,7 +3,7 @@ class VendorsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.all.reverse
   end
 
   def show
@@ -24,22 +24,26 @@ class VendorsController < ApplicationController
   end
 
   def edit
+    if current_user.is_admin
     @vendor = Vendor.find(params[:id])
+    end
   end
 
   def update
     @vendor = Vendor.find(params[:id])
-       if @vendor.update_attributes(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
-      redirect_to vendors_path
-    else
-      render 'edit'
+      if @vendor.update_attributes(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
+        redirect_to vendors_path
+      else
+        render 'edit'
     end
   end
 
   def destroy
+    if current_user.is_admin
     @vendor = Vendor.find(params[:id])
     @vendor.destroy
     Vendor.where(vendor_id: @vendor.id).destroy
     redirect_to vendors_path
   end
+end
 end

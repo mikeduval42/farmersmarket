@@ -26,15 +26,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Add a Vendor", new_vendor_path %></li>
-        <li><%= link_to 'Back', vendors_path %></li>
+        <li><%= link_to 'Home Page', vendors_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-        <li><%= link_to "Sign Up", new_user_path %></li>
-        <li><%= link_to "Sign In", new_sessions_path %></li>
-          <% else %>
-        <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Sign In", new_sessions_path %></li>
+        <% else %>
+          <li><%= link_to "Logout", sessions_path, :method => :delete %></li>
+          <li><%= link_to "Add a Vendor", new_vendor_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -1,13 +1,17 @@
 <div class="container">
 <h1 class="text-center">Login</h1>
 <br>
+<div class="text-center">
 <%= form_for :session, :url => sessions_path do |f| %>
   Email <span><%= f.text_field :email %></span>
   Password <span><%= f.password_field :password %></span>
+
+
 <br>
 <br>
   <span><%= f.submit %></span>
 <% end %>
+</div>
 </div>
 
 
