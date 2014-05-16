@@ -8,6 +8,7 @@ Farmersmarketapp::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 
+  root 'vendors#index'
   # get "vendors/index"
   # get "vendors/show"
   # get "vendors/new"
