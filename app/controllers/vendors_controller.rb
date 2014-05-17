@@ -1,6 +1,7 @@
 class VendorsController < ApplicationController
 
-  before_action :authenticate_user
+  before_action :authenticate_user, only: [:new, :create, :update, :edit, :destroy]
+  before_action :set_user, only: [:new, :create]
 
   def index
     @vendors = Vendor.all.reverse
@@ -16,6 +17,7 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = Vendor.new(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
+    @vendor.owner = @current_user.name
     if @vendor.save
       flash[:success] = "Your entry has been created!"
       redirect_to vendors_path
@@ -48,4 +50,8 @@ class VendorsController < ApplicationController
     redirect_to vendors_path
   end
 end
+
+  def set_user
+    @user = current_user
+  end
 end

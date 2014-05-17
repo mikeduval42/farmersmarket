@@ -19,7 +19,7 @@
     <%= f.text_field :stall, class: "form-control" %>
   </div><br>
   <div class="field"><strong>Owner</strong><br>
-    <%= f.text_field :owner, class: "form-control" %>
+    <%= f.text_field :owner, value: current_user.name, class: "form-control" %>
   </div><br>
   <div class="field"><strong>Type</strong><br>
     <%= f.text_field :type, class: "form-control" %>

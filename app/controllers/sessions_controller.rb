@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 #login
   def create
     @user = User.where(:email => params[:session][:email]).first
-
     if @user == nil || !@user.authenticate(params[:session][:password])
       render 'new'
     else

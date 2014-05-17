@@ -7,6 +7,8 @@ class User
   field :is_admin, type: Mongoid::Boolean, default: false
   validates_presence_of :name, :email, :password_digest, message: "One or more of the fields was not completed, please update."
 
+  belongs_to :vendor
+
   def password
     @password
 end
