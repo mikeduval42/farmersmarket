@@ -1,27 +1,23 @@
 <% if @user.errors.any? %>
-
-    <ul class="list-group">
-      <% @user.errors.messages.each do |message| %>
-        <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <ul class="list-group">
+    <% @user.errors.messages.each do |message| %>
+      <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <div class="container">
-<h1 class="text-center">Sign Up</h1>
-<br>
-<div class="text-center">
-  <%= form_for @user do |f| %>
-    Name <span><%= f.text_field :name %></span>
-    Email <span><%= f.text_field :email %></span>
-    Password <span><%= f.password_field :password %></span>
-<!--     Admin <span><%= f.text_field :is_admin %></span> -->
-<!--  Uncomment and remove # to create admin-->
-<br>
-<br>
-
-<span><%= f.submit %></span>
-<% end %>
-</div>
+  <h1 class="text-center">Sign Up</h1>
+  <br>
+  <div class="text-center">
+    <%= form_for @user do |f| %>
+      Name <span><%= f.text_field :name %></span>
+      Email <span><%= f.text_field :email %></span>
+      Password <span><%= f.password_field :password %></span>
+    <br>
+    <br>
+    <span><%= f.submit %></span>
+    <% end %>
+  </div>
 </div>
 

@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
-#login
+#login that finds user based on email
   def create
     @user = User.where(:email => params[:session][:email]).first
     if @user == nil || !@user.authenticate(params[:session][:password])

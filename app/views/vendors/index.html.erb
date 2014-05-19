@@ -1,12 +1,11 @@
 <div class="container">
-  <h1 class="text-center">Farmer's Market Vendors Index</h1><br>
-    <p class="text-center">Come visit the Encino Farmer's Market on Sundays between 8am and 2pm</p><br>
-    <% @vendors.each do |v| %>
+  <h1 class="text-center">Encino Farmer's Market Vendors</h1><br>
+    <p class="text-center">Come visit the Encino Farmer's Market on Sundays between 8am and 2pm<br>Click on the vendor's name to view additional details.</p><br>
 
-      <%= link_to(vendor_path(v)) do %><div class="attributes"><strong>Name: &nbsp;</strong><%= v.name %></div><% end %>
-      <div class="attributes"><strong>Stall: &nbsp;</strong> <%= v.stall %></div>
-      <div class="attributes"><strong>Owner: &nbsp;</strong> <%= v.owner %></div>
-      <div class="attributes"><strong>Type: &nbsp;</strong> <%= v.type %></div>
+    <% @vendors.each do |v| %>
+      <%= link_to(vendor_path(v)) do %><div class="attributes"><strong>Name: &nbsp;</strong><%= v.name %></div>
+      <% end %>
+      <div class="attributes"><strong>Specialty: &nbsp;</strong> <%= v.type %></div>
       <div class="attributes"><strong>Comments: &nbsp;</strong> <%= v.comments %></div>
 
       <% if (current_user && v.owner == current_user.name) %>
@@ -15,7 +14,6 @@
       <% end %>
       <br>
       <br>
-
     <% end %>
 </div>
 

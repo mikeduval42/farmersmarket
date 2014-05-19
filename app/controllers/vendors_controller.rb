@@ -16,7 +16,7 @@ class VendorsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.new(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
+    @vendor = Vendor.new(params.require(:vendor).permit(:name, :stall, :owner, :location, :type, :site, :comments))
     @vendor.owner = @current_user.name
     if @vendor.save
       flash[:success] = "Your entry has been created!"
@@ -27,14 +27,12 @@ class VendorsController < ApplicationController
   end
 
   def edit
-    if current_user.is_admin
     @vendor = Vendor.find(params[:id])
-    end
   end
 
   def update
     @vendor = Vendor.find(params[:id])
-      if @vendor.update_attributes(params.require(:vendor).permit(:name, :stall, :owner, :type, :comments))
+      if @vendor.update_attributes(params.require(:vendor).permit(:name, :stall, :owner, :location, :type, :site, :comments))
         flash[:success] = "Your entry has been updated!"
         redirect_to vendors_path
       else
@@ -43,12 +41,10 @@ class VendorsController < ApplicationController
   end
 
   def destroy
-    if current_user.is_admin
     @vendor = Vendor.find(params[:id])
     @vendor.destroy
     Vendor.where(vendor_id: @vendor.id).destroy
     redirect_to vendors_path
-  end
 end
 
   def set_user

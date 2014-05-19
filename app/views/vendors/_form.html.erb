@@ -1,36 +1,47 @@
 <div class= "possibleerrors">
-
   <%#Show errors%>
 <% if @vendor.errors.any? %>
-    <h2><%= pluralize(@vendor.errors.count, "error") %> prohibited this vendor from being added:</h2>
-    <ul class="list-group">
-      <% @vendor.errors.messages.each do |message| %>
-        <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <h2><%= pluralize(@vendor.errors.count, "error") %> prohibited this vendor from being added:</h2>
+  <ul class="list-group">
+    <% @vendor.errors.messages.each do |message| %>
+      <li class="list-group-item list-group-item-danger"><%= message[1][0].to_s %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%=  form_for(@vendor) do |f| %>
-<div class="container">
-  <div class="field"><strong>Name</strong><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div><br>
-  <div class="field"><strong>Stall</strong><br>
-    <%= f.text_field :stall, class: "form-control" %>
-  </div><br>
-  <div class="field"><strong>Owner</strong><br>
-    <%= f.text_field :owner, value: current_user.name, class: "form-control" %>
-  </div><br>
-  <div class="field"><strong>Type</strong><br>
-    <%= f.text_field :type, class: "form-control" %>
-  </div><br>
-  <div class="field"><strong>Comments</strong><br>
-    <!-- text_area allows for moving text entry adn thr 50x10 sets a min size for box -->
-    <%= f.text_area :comments, class: "form-control" %>
+  <div class="container">
+    <div class="field"><strong>Name</strong><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Stall</strong><br>
+      <%= f.text_field :stall, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Owner</strong><br>
+      <%= f.text_field :owner, value: current_user.name, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Location</strong><br>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Specialty</strong><br>
+      <%= f.text_field :type, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Website</strong><br>
+      <%= f.text_field :site, class: "form-control" %>
+    </div>
+    <br>
+    <div class="field"><strong>Comments</strong><br>
+      <!-- text_area allows for moving text entry adn thr 50x10 sets a min size for box -->
+      <%= f.text_area :comments, class: "form-control" %>
+    </div>
   </div>
-</div>
-<br>
-<div class="actions">
-  <%= f.submit %>
-</div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

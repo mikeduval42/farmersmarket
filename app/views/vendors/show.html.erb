@@ -1,10 +1,11 @@
 <div class="container">
   <h1 class="text-center"> <%= @vendor.name %> </h1>
-    <div class="attributes"><strong>Name:</strong> <%= @vendor.name %> </div>
-    <div class="attributes"><strong>Stall:</strong> <%= @vendor.stall %> </div>
-    <div class="attributes"><strong>Owner:</strong> <%= @vendor.owner %> </div>
-    <div class="attributes"><strong>Type:</strong> <%= @vendor.type %> </div>
+    <div class="attributes"><strong>Name:</strong> <%= @vendor.name %> </div><br>
+    <div class="attributes"><strong>Stall:</strong> <%= @vendor.stall %> </div><br>
+    <div class="attributes"><strong>Owner:</strong> <%= @vendor.owner %> </div><br>
+    <div class="attributes"><strong>Location:</strong> <%= @vendor.location %> </div><br>
+    <div class="attributes"><strong>Specialty:</strong> <%= @vendor.type %> </div><br>
+    <div class="attributes"><strong>Website:</strong> <a href="<%= @vendor.site %>"><%= @vendor.site %></a></div><br>
     <div class="attributes"><strong>Comments:</strong> <%= @vendor.comments %> </div>
     <br>
-
 </div>
