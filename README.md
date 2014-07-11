@@ -2,4 +2,4 @@ Ever wondered what your favorite vendor will be bringing to the farmer's market 
 
 The app utilizes Ruby on Rails, MongoDB, and Heroku.
 
-To visit the app visit <a href="http://farmersmarketapp.herokuapp.com/">
+Check out <a href="http://farmersmarketapp.herokuapp.com/"> Farmer's Market App </a>
