@@ -45,7 +45,7 @@ class VendorsController < ApplicationController
     @vendor.destroy
     Vendor.where(vendor_id: @vendor.id).destroy
     redirect_to vendors_path
-end
+  end
 
   def set_user
     @user = current_user

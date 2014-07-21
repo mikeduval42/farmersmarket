@@ -10,5 +10,4 @@ class Vendor
 
   validates_presence_of :name, :stall, :owner, :location, :type, :site, :comments, message: "One or more of the fields were not filled out."
 
-  has_one :user
 end
