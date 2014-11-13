@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+    var colorOrig=$(".jobshover").css('background');
+    $(".jobshover").hover(
+    function() {
+        //mouse over
+        $(this).toggleClass('hover')
+
+    });
+});
