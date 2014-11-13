@@ -3,17 +3,32 @@
     <p class="text-center">Come visit the Encino Farmer's Market on Sundays between 8am and 2pm<br>Click on the vendor's name to view additional details.</p><br>
 
     <% @vendors.each do |v| %>
-      <%= link_to(vendor_path(v)) do %><div class="attributes"><strong>Name: &nbsp;</strong><%= v.name %></div>
-      <% end %>
-      <div class="attributes"><strong>Specialty: &nbsp;</strong> <%= v.type %></div>
-      <div class="attributes"><strong>Comments: &nbsp;</strong> <%= v.comments %></div>
+      <div class="jobshover">
+        <%= link_to(vendor_path(v)) do %><div class="attributes"><strong>Name: &nbsp;</strong><%= v.name %></div>
+        <% end %>
+        <div class="attributes"><strong>Specialty: &nbsp;</strong> <%= v.type %></div>
+        <div class="attributes"><strong>Comments: &nbsp;</strong> <%= v.comments %></div>
 
-      <% if (current_user && v.owner == current_user.name) %>
-        <%= link_to "Edit", edit_vendor_path(v) %>
-        <%= link_to "Delete", v, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <br>
-      <br>
-    <% end %>
+        <% if (current_user && v.owner == current_user.name) %>
+          <%= link_to "Edit", edit_vendor_path(v) %>
+          <%= link_to "Delete", v, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <br>
+        <br>
+        </div>
+        <% end %>
 </div>
+<script>
+$(document).ready(function() {
+    var colorOrig=$(".jobshover").css('background');
+    $(".jobshover").hover(
+    function() {
+        //mouse over
+        $(this).toggleClass('hover')
+    // }, function() {
+    //     //mouse out
+    //     $(this).animate(.removeClass({'hover'}, 700))
+    });
+});
+</script>
 

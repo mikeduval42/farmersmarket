@@ -4,7 +4,7 @@ class VendorsController < ApplicationController
   before_action :set_user, only: [:new, :create]
 
   def index
-    @vendors = Vendor.all.reverse
+    @vendors = Vendor.all
   end
 
   def show

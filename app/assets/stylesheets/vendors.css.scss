@@ -33,6 +33,17 @@ h1 {
   max-width: 760px;
   margin-top: -1px;
 }
+.hover {
+    background-color: white;
+    opacity: .8;
+    color: black;
+  }
+.jobshover {
+      -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 
 
 
